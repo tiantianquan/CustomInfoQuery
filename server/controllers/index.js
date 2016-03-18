@@ -21,7 +21,7 @@ var baseReq = function*(next) {
       form: this.request.body
     }
   ))
-  if(this.request.path.indexOf('companyInfo')!=-1){
+  if(this.request.path.toLowerCase().indexOf('companyinfo')!=-1){
     for(var i in this.request.body) {
       this.request.body[i] = iconv.decode(this.request.body[i], 'gbk')
       this.request.body[i] = urlencode(this.request.body[i], 'gbk')
